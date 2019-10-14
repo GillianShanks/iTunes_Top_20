@@ -1,0 +1,29 @@
+#song-list{
+  display: flex;
+  flex-flow:row wrap;
+  justify-content: center;
+}
+
+.song{
+  display:flex;
+  flex-direction: column;
+  width:20em;
+  margin: 1em;
+  border:2px solid black;
+  border-radius: 8px;
+  align-items: center;
+  background-image: linear-gradient(#ff96fc, white);
+}
+
+p{
+  text-align: center;
+  margin:10px;
+}
+
+h3{
+  text-align: center;
+}
+
+#count{
+  margin: 0;
+}

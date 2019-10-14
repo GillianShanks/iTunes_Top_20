@@ -1,4 +1,5 @@
 import React from 'react';
+import './MusicList.css';
 
 function MusicList(props){
 
@@ -10,20 +11,25 @@ function MusicList(props){
   const list = props.top20.map((song, index) => {
     counter += 1;
     const imgUrl = song['im:image'][2].label;
+    const audioUrl = song.link[1].attributes.href;
     return (
-      <li key={index}>
-        <p>Chart position: {counter}</p>
-        <p>{song.title.label}</p>
+      <div className="song" key={index}>
+        <p>Chart position:</p>
+        <h2 id="count">{counter}</h2>
+        <h3>Song: {song["im:name"].label}</h3>
+        <p>Artist: {song['im:artist'].label}</p>
         <p><img src={imgUrl} alt="song cover art"/></p>
-      </li>
+        <p>Click play to preview:</p>
+        <audio src={audioUrl} controls></audio>
+      </div>
     )
   })
 
 
   return (
-    <ul>
+    <div id="song-list">
       {list}
-    </ul>
+    </div>
   )
 }
 
