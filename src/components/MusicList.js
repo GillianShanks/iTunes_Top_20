@@ -7,8 +7,16 @@ function MusicList(props){
   }
 
   const list = props.top20.map((song, index) => {
-    return <li key={index}>{song.title.label}</li>
+    const imgUrl = song['im:image'][2].label;
+    return (
+      <li key={index}>
+        <p>{song.title.label}</p>
+        <p><img src={imgUrl} alt="song cover art"/></p>
+      </li>
+    )
   })
+
+
   return (
     <ul>
       {list}
