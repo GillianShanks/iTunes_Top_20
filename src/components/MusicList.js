@@ -6,10 +6,13 @@ function MusicList(props){
     return "Loading top 20 songs..."
   }
 
+  let counter = 0;
   const list = props.top20.map((song, index) => {
+    counter += 1;
     const imgUrl = song['im:image'][2].label;
     return (
       <li key={index}>
+        <p>Chart position: {counter}</p>
         <p>{song.title.label}</p>
         <p><img src={imgUrl} alt="song cover art"/></p>
       </li>
